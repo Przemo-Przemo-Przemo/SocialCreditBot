@@ -1,0 +1,3 @@
+application:
+  discord:
+    botToken: ${BOT_DISCORD_TOKEN}
