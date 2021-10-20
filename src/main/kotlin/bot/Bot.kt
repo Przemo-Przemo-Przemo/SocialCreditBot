@@ -1,5 +1,7 @@
 package bot
 
+import bot.censorship.Intent
+import bot.censorship.communistReply
 import bot.commands.Command
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -68,7 +70,8 @@ class Bot : ListenerAdapter() {
             val command = nameOfCommandToCommand[commandName]
 
             if(command == null) {
-                event.channel.sendMessage("Don't make me decrease your social credit for not knowing the command citizen.").queue()
+                event.communistReply("Don't make me decrease your social credit for not knowing the command citizen.", Intent.BAD)
+//                event.channel.sendMessage("Don't make me decrease your social credit for not knowing the command citizen.").queue()
             } else {
                 command.run(event)
             }
